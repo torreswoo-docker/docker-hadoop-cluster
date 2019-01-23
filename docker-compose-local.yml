@@ -7,6 +7,9 @@ services:
     hostname: namenode
     networks:
       - hadoop
+    ports:
+      - "8020:8020"
+      - "50070:50070"
     volumes:
       - ./data/namenode:/hadoop/dfs/name
     environment:
@@ -27,6 +30,9 @@ services:
     links:
       - namenode
     ports:
+      - "8030:8030"
+      - "8031:8031"
+      - "8032:8032"
       - "8088:8088"
     env_file:
       - ./hadoop.env
@@ -75,6 +81,10 @@ services:
       - namenode
     networks:
       - hadoop
+    ports:
+      - "50075:50075"
+      - "50010:50010"
+      - "50020:50020"
     links:
       - namenode
     volumes:
@@ -90,6 +100,10 @@ services:
       - namenode
     networks:
       - hadoop
+        #ports:
+        #- "50075:50075"
+        #- "50010:50010"
+        #- "50020:50020"
     links:
       - namenode
     volumes:
@@ -105,6 +119,10 @@ services:
       - namenode
     networks:
       - hadoop
+        #ports:
+        #- "50075:50075"
+        #- "50010:50010"
+        #- "50020:50020"
     links:
       - namenode
     volumes:
