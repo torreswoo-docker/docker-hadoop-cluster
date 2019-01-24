@@ -2,7 +2,7 @@ version: "2"
 
 services:
   namenode:
-    build: ./namenode
+    build: ./hadoop-namenode
     container_name: namenode
     hostname: namenode
     networks:
@@ -18,7 +18,7 @@ services:
       - ./hadoop.env
 
   resourcemanager:
-    build: ./resourcemanager
+    build: ./hadoop-resourcemanager
     container_name: resourcemanager
     hostname: resourcemanager
     depends_on:
@@ -38,7 +38,7 @@ services:
       - ./hadoop.env
 
   historyserver:
-    build: ./historyserver
+    build: ./hadoop-historyserver
     container_name: historyserver
     hostname: historyserver
     volumes:
@@ -57,7 +57,7 @@ services:
       - ./hadoop.env
 
   nodemanager:
-    build: ./nodemanager
+    build: ./hadoop-nodemanager
     container_name: nodemanager
     hostname: nodemanager
     depends_on:
@@ -74,7 +74,7 @@ services:
       - ./hadoop.env
 
   datanode1:
-    build: ./datanode
+    build: ./hadoop-datanode
     container_name: datanode1
     hostname: datanode1
     depends_on:
@@ -93,7 +93,7 @@ services:
       - ./hadoop.env
 
   datanode2:
-    build: ./datanode
+    build: ./hadoop-datanode
     container_name: datanode2
     hostname: datanode2
     depends_on:
@@ -112,7 +112,7 @@ services:
       - ./hadoop.env
 
   datanode3:
-    build: ./datanode
+    build: ./hadoop-datanode
     container_name: datanode3
     hostname: datanode3
     depends_on:

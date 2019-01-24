@@ -12,7 +12,7 @@ You can also compile the specific hadoop with [hadoop-compiler](https://github.c
 
 To deploy an example HDFS cluster, run:
 ```
-  make build-base
+  make build-hadoop-base
   docker network create -d bridge hadoop
   docker-compose -f docker-compose-local.yml up
 ```
