@@ -12,10 +12,17 @@ You can also compile the specific hadoop with [hadoop-compiler](https://github.c
 
 To deploy an example HDFS cluster, run:
 ```
+  make build-base
   docker network create -d bridge hadoop
   docker-compose -f docker-compose-local.yml up
 ```
-
+```
+# YARN test : https://blog.acronym.co.kr/370
+$ docker exec -it namenode /bin/bash
+> hdfs dfs -ls /
+> hdfs dfs -mkdir /test1
+> hdfs dfs -put ./entrypoint.sh /test1
+```
 The configuration parameters can be specified in the hadoop.env file or as environmental variables for specific services (e.g. namenode, datanode etc.):
 ```
   CORE_CONF_fs_defaultFS=hdfs://namenode:8020
